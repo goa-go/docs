@@ -13,7 +13,7 @@ module.exports = {
   },
   themeConfig: {
     repo: 'goa-go/goa',
-    docsRepo: 'goa-go/goa-go.github.io',
+    docsRepo: 'goa-go/docs',
     docsDir: 'docs',
     editLinks: true,
     locales: {
