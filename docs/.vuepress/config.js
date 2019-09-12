@@ -69,22 +69,9 @@ module.exports = {
     ['@vuepress/medium-zoom', true],
     ['@vuepress/last-updated', {
       transformer: (timestamp, lang) => {
-        let d = new Date(timestamp + new Date().getTimezoneOffset() * 60000)
-
-        let year = d.getFullYear(),
-          month = d.getMonth(),
-          day = d.getDate(),
-          hour = d.getHours(),
-          minute = d.getMinutes(),
-          second = d.getSeconds()
-
-        month += 1
-        if (month >= 12) {
-          month -= 12
-          year += 1
-        }
-
-        return `${year}-${pad(month)}-${pad(day)} ${pad(hour)}:${pad(minute)}:${pad(second)}`
+        const moment = require('moment')
+        moment.locale(lang)
+        return moment(timestamp).fromNow()
       }
     }]
   ],
