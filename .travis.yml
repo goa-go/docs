@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - lts/*
+
+script:
+  - yarn build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: docs/.vuepress/dist
+  repo: goa-go/goa-go.github.io
+  target-branch: master
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  verbose: true
+  on:
+    branch: master
