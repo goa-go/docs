@@ -67,6 +67,31 @@ module.exports = {
       'ga': 'UA-147616433-1'
     }],
     ['@vuepress/medium-zoom', true],
+    ['@vuepress/last-updated', {
+      transformer: (timestamp, lang) => {
+        let d = new Date(timestamp)
+
+        let year = d.getFullYear(),
+          month = d.getMonth(),
+          day = d.getDate(),
+          hour = d.getHours(),
+          minute = d.getMinutes(),
+          second = d.getSeconds()
+
+        month += 1
+        if (month >= 12) {
+          month -= 12
+          year += 1
+        }
+
+        return `${year}-${pad(month)}-${pad(day)} ${pad(hour)}:${pad(minute)}:${pad(second)}`
+      }
+    }]
   ],
   port: 8000
+}
+
+function pad (x) {
+  if (x < 10) return `0${x}`
+  return x
 }
