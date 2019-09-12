@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/goa-go/docs.svg?branch=master)](https://travis-ci.org/goa-go/docs)
 
-- Powed by [vuepress](https://vuepress.vuejs.org).
+- Powered by [vuepress](https://vuepress.vuejs.org).
 - Continuous integration via [TravisCi](https://travis-ci.org).
 
 ## License

@@ -35,3 +35,7 @@ func main() {
   log.Fatal(app.Listen(":3000"))
 }
 ```
+
+::: warning
+The author has limited English proficiency and may make mistakes.
+:::

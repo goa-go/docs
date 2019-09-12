@@ -122,10 +122,10 @@ c.ParseJSON(goa.M{
 ```
 
 ## ParseXML
-`ParseXML(pointer interface{}) error` Parse XML in the request body, the parameter must be a pointer. Same as [ParseJSON](#parsejson)。
+`ParseXML(pointer interface{}) error` Parse XML in the request body, the parameter must be a pointer. Same as [ParseJSON](#parsejson).
 
 ## ParseString
-`ParseString() (string, error)` Read the body of the request.。
+`ParseString() (string, error)` Read the body of the request..
 
 ## ParseQuery
 `ParseQuery(pointer interface{}) error` Parse Query as a struct. If you need to use tags, the tag name is query.
@@ -142,7 +142,7 @@ c.ParseQuery(p)
 ```
 
 ## ParseForm
-`ParseForm(pointer interface{}) error` Parse Query as a struct. If you need to use tags, the tag name is query. Same as [ParseQuery](#parsequery)。
+`ParseForm(pointer interface{}) error` Parse Query as a struct. If you need to use tags, the tag name is query. Same as [ParseQuery](#parsequery).
 
 ## Status
 `Status(code int)` Set the HTTP status code.
@@ -171,10 +171,10 @@ c.JSON(p)
 `XML(xml interface{})` Respond XML data.
 
 ### String
-`String(str string)` Respond string。
+`String(str string)` Respond string.
 
 ## HTML
-`HTML(html string)` Respond html。
+`HTML(html string)` Respond html.
 
 ## Redirect
 `Redirect(code int, url string)` Redirect, and bypasses goa's response handling.
