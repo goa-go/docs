@@ -69,7 +69,7 @@ module.exports = {
     ['@vuepress/medium-zoom', true],
     ['@vuepress/last-updated', {
       transformer: (timestamp, lang) => {
-        let d = new Date(timestamp)
+        let d = new Date(timestamp + new Date().getTimezoneOffset() * 60000)
 
         let year = d.getFullYear(),
           month = d.getMonth(),
