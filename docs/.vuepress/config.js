@@ -70,8 +70,8 @@ module.exports = {
     ['@vuepress/last-updated', {
       transformer: (timestamp, lang) => {
         const moment = require('moment')
-        moment.locale(lang)
-        return moment(timestamp).fromNow()
+        // use UTC time
+        return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
       }
     }]
   ],
