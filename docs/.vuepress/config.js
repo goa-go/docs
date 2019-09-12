@@ -77,8 +77,3 @@ module.exports = {
   ],
   port: 8000
 }
-
-function pad (x) {
-  if (x < 10) return `0${x}`
-  return x
-}
