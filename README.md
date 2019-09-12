@@ -7,4 +7,4 @@
 
 ## License
 
-[MIT](https://github.com/goa-go/goa/blob/master/LICENSE)
+[MIT](https://github.com/goa-go/docs/blob/master/LICENSE)
