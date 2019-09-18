@@ -1,6 +1,6 @@
 # 上下文(Context)
 
-::: tip 🔖
+::: tip
 Context将net/http的`*Request`和`ResponseWriter`对象及其对应的方法封装到单个对象中，方便调用处理请求和响应的方法。
 :::
 ## Field

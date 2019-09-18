@@ -73,6 +73,12 @@ module.exports = {
         // use UTC time
         return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
       }
+    }],
+    ['container', {
+      type: 'tip',
+      defaultTitle: {
+        '/zh/': ''
+      }
     }]
   ],
   port: 8000
