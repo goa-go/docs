@@ -131,7 +131,7 @@ c.ParseJSON(goa.M{
 
 ```go
 type Person struct {
-	Name    string `query:"name"`
+  Name    string `query:"name"`
   Age     int    `query:"age"`
   Married bool   `query:"-"` // "-"为忽略
 }
@@ -142,6 +142,24 @@ c.ParseQuery(p)
 
 ## ParseForm
 `ParseForm(pointer interface{}) error` 解析form为结构体，标签名为form。同[ParseQuery](#parsequery)。
+
+## Cookie
+`Cookie(name string) (string, error)` 解析请求中携带的cookie，若对应名称的cookie
+不存在则返回`ErrNoCookie`。
+
+## SetCookie
+`SetCookie(cookie *http.Cookie)` 设定cookie，需使用http包。
+```go
+  c.SetCookie(&http.Cookie{
+    Name:     "user",
+    Value:    "goa",
+    MaxAge:   1,
+    Path:     "/",
+    Domain:   "localhost",
+    Secure:   true,
+    HttpOnly: true,
+  })
+```
 
 ## Status
 `Status(code int)` 设置http状态码。

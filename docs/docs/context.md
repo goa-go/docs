@@ -132,7 +132,7 @@ c.ParseJSON(goa.M{
 
 ```go
 type Person struct {
-	Name    string `query:"name"`
+  Name    string `query:"name"`
   Age     int    `query:"age"`
   Married bool   `query:"-"` // "-"为忽略
 }
@@ -143,6 +143,24 @@ c.ParseQuery(p)
 
 ## ParseForm
 `ParseForm(pointer interface{}) error` Parse Query as a struct. If you need to use tags, the tag name is query. Same as [ParseQuery](#parsequery).
+
+## Cookie
+`Cookie(name string) (string, error)` Cookie returns the named cookie provided in the request or `ErrNoCookie` if not found.
+
+## SetCookie
+`SetCookie(cookie *http.Cookie)` SetCookie adds a Set-Cookie header to the ResponseWriter's headers, require `http` package.
+
+```go
+  c.SetCookie(&http.Cookie{
+    Name:     "user",
+    Value:    "goa",
+    MaxAge:   1,
+    Path:     "/",
+    Domain:   "localhost",
+    Secure:   true,
+    HttpOnly: true,
+  })
+```
 
 ## Status
 `Status(code int)` Set the HTTP status code.
