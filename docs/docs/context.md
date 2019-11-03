@@ -173,7 +173,7 @@ When the status code is not set, if the normal response is set to 200 automatica
 Set the state code again or `c.Error(...)` can change the state code of the final response.
 
 ## JSON
-`JSON(json interface{})` Respond JSON data, it automatically sets status code as 200 and automatically sets the `Content-Type` of the HTTP response header, the following will not be repeated.
+`JSON(json interface{})` Respond JSON data, it automatically sets status code as 200 and automatically sets the `Content-Type` of the HTTP response header.
 
 ```go
 type obj struct {
@@ -186,13 +186,13 @@ c.JSON(p)
 ```
 
 ## XML
-`XML(xml interface{})` Respond XML data.
+`XML(xml interface{})` Respond XML data, Same as [JSON](#json).
 
 ## String
-`String(str string)` Respond string.
+`String(str string)` Respond string, the `Content-Type` of the HTTP header will be set to `text / plain; charset = UTF-8`.
 
 ## HTML
-`HTML(html string)` Respond html.
+`HTML(html string)` Respond html, similar to `c.string`, but the `Content-Type` of HTTP header will be set to `text / HTML; charset = UTF-8`.
 
 ## Redirect
 `Redirect(code int, url string)` Redirect, and bypasses goa's response handling.

@@ -171,7 +171,7 @@ c.ParseQuery(p)
 再次设定状态码或者 `c.Error(...)` 都可以改变最后响应的状态码。
 
 ## JSON
-`JSON(json interface{})` 响应json数据，会自动响应200状态码、自动设置http响应头部的`Content-Type`，以下不再赘述。
+`JSON(json interface{})` 响应json数据，会自动响应200状态码、自动设置http响应头部的`Content-Type`。
 
 ```go
 type obj struct {
@@ -184,13 +184,13 @@ c.JSON(p)
 ```
 
 ## XML
-`XML(xml interface{})` 响应xml数据。
+`XML(xml interface{})` 响应xml数据，同[JSON](#json)。
 
 ## String
-`String(str string)` 响应字符串。
+`String(str string)` 响应字符串，http头部的`Content-Type`会被设置为`text/plain; charset=utf-8`。
 
 ## HTML
-`HTML(html string)` 响应html。
+`HTML(html string)` 响应html，与`c.String`类似，但http头部的`Content-Type`会被设置为`text/html; charset=utf-8`。
 
 ## Redirect
 `Redirect(code int, url string)` 重定向，会绕过goa的响应处理。
