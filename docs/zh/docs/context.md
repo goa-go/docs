@@ -186,7 +186,7 @@ c.JSON(p)
 ## XML
 `XML(xml interface{})` 响应xml数据。
 
-### String
+## String
 `String(str string)` 响应字符串。
 
 ## HTML

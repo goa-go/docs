@@ -188,7 +188,7 @@ c.JSON(p)
 ## XML
 `XML(xml interface{})` Respond XML data.
 
-### String
+## String
 `String(str string)` Respond string.
 
 ## HTML
