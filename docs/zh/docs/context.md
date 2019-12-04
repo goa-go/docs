@@ -87,6 +87,9 @@ value := c.Get("key").(string)
 
 若form复杂或需要类型转换，推荐使用[ParseForm](#parseform)。
 
+## FormFile
+`FormFile(name string) (multipart.File, *multipart.FileHeader, error)` 同`c.Request.FormFile`。
+
 ## Param
 `Param(key string) (value string)` 获取路由中的参数，若不存在则返回""。
 

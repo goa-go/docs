@@ -88,6 +88,9 @@ If Query is complex or requires type conversion, it is recommended to use [Parse
 
 If form is complex or requires type conversion, it is recommended to use [ParseForm](#parseform).
 
+## FormFile
+`FormFile(name string) (multipart.File, *multipart.FileHeader, error)` Same as `c.Request.FormFile`.
+
 ## Param
 `Param(key string) (value string)` Get the parameters in the router and returns "" if they do not exist.
 
