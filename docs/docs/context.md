@@ -108,20 +108,15 @@ r.GET("/example/:key", func(c *goa.Context) {
 `ParseJSON(pointer interface{}) error` Parse JSON in the request body, the parameter must be a pointer.
 
 ```go
-type obj struct {
-  Key string `json:"key"`
+type Person struct {
+  Name    string `json:"name"`
+  Age     int    `json:"age"`
+  Married bool   `json:"-"` // "-" means ignore
 }
-o := &obj{}
-c.ParseJSON(o)
+
+p := &Person{}
+c.ParseJSON(p)
 ...
-```
-
-You can also use `goa.M`, which is actually just `map[string]interface{}`
-
-```go
-c.ParseJSON(goa.M{
-  "key": "value",
-})
 ```
 
 ## ParseXML
@@ -186,6 +181,14 @@ o := obj{
   Key: "value",
 }
 c.JSON(o)
+```
+
+You can also use `goa.M`, which is actually just `map[string]interface{}`
+
+```go
+c.JSON(goa.M{
+  "key": "value",
+})
 ```
 
 ## XML

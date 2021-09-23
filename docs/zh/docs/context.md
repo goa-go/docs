@@ -107,20 +107,15 @@ r.GET("/example/:key", func(c *goa.Context) {
 `ParseJSON(pointer interface{}) error` 解析请求body中的json，pointer必须为指针。
 
 ```go
-type obj struct {
-  Key string `json:"key"`
+type Person struct {
+  Name    string `json:"name"`
+  Age     int    `json:"age"`
+  Married bool   `json:"-"` // "-"为忽略
 }
-p := &obj{}
+
+p := &Person{}
 c.ParseJSON(p)
 ...
-```
-
-还可以通过goa.M使用，实际上goa.M只是`map[string]interface{}`
-
-```go
-c.ParseJSON(goa.M{
-  "key": "value",
-})
 ```
 
 ## ParseXML
@@ -180,10 +175,19 @@ c.ParseQuery(p)
 type obj struct {
   Key string `json:"key"`
 }
-p := Person{
+o := obj{
   Key: "value",
 }
-c.JSON(p)
+
+c.JSON(o)
+```
+
+还可以通过goa.M使用，实际上goa.M只是`map[string]interface{}`
+
+```go
+c.JSON(goa.M{
+  "key": "value",
+})
 ```
 
 ## XML
