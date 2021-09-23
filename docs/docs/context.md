@@ -52,7 +52,7 @@ app.Use(func(c *goa.Context) {
 })
 app.Use(func(c *goa.Context) {
   fmt.Println(3)
-  //c.Next() 此处可以省略c.Next()
+  //c.Next() here can be ignore
   fmt.Println(4)
 })
 ```
@@ -111,8 +111,8 @@ r.GET("/example/:key", func(c *goa.Context) {
 type obj struct {
   Key string `json:"key"`
 }
-p := &obj{}
-c.ParseJSON(p)
+o := &obj{}
+c.ParseJSON(o)
 ...
 ```
 
@@ -137,7 +137,7 @@ c.ParseJSON(goa.M{
 type Person struct {
   Name    string `query:"name"`
   Age     int    `query:"age"`
-  Married bool   `query:"-"` // "-"为忽略
+  Married bool   `query:"-"` // "-" means ignore
 }
 
 p := &Person{}
@@ -182,10 +182,10 @@ Set the state code again or `c.Error(...)` can change the state code of the fina
 type obj struct {
   Key string `json:"key"`
 }
-p := Person{
+o := obj{
   Key: "value",
 }
-c.JSON(p)
+c.JSON(o)
 ```
 
 ## XML
